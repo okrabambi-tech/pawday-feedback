@@ -1,0 +1,50 @@
+name: PawDay feedback
+description: Report a bug or propose a feature or design improvement. Public text only.
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        此页面公开。请勿填写个人信息、宠物档案、购买凭证、密码、令牌或录音。
+        当前为人工整理阶段；App 内每日 1 条反馈 / 5 次支持与正式排名尚未开放。
+        This is public. Do not include private records or credentials. GitHub reactions are not official community votes.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Type
+      options:
+        - Bug
+        - Feature
+        - Design
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version and iOS version
+      description: Optional. Version numbers only; do not upload logs or device identifiers.
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem or use case
+      description: One issue per submission. Describe reproduction steps or the situation you want to improve. Use 20–2000 characters of plain text.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result and acceptance criteria
+      description: What observable behavior would resolve this request?
+    validations:
+      required: true
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing feedback for duplicates.
+          required: true
+        - label: This submission contains no private records, credentials, or sensitive vulnerability details.
+          required: true
+        - label: I understand this is public and votes do not guarantee delivery or a deadline.
+          required: true
